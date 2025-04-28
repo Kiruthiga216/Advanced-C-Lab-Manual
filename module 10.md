@@ -10,11 +10,59 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+#include <stdlib.h> 
+struct Node { 
+    int data; 
+    struct Node* next; 
+}; 
+struct Node* head = NULL; 
+void insert(int value) { 
+    struct Node* newNode = (struct Node*) malloc(sizeof(struct Node)); 
+    newNode->data = value; 
+    newNode->next = NULL; 
+ 
+    if (head == NULL) { 
+        head = newNode; 
+    } else { 
+        struct Node* temp = head; 
+        while (temp->next != NULL) { 
+            temp = temp->next; 
+        } 
+        temp->next = newNode; 
+    } 
+} 
+ 
+void search(int key) { 
+    struct Node* temp = head; 
+    int position = 1; 
+    while (temp != NULL) { 
+        if (temp->data == key) { 
+            printf("item %d found at location %d\n", key, position); 
+            return; 
+        } 
+        temp = temp->next; 
+        position++; 
+    } 
+    printf("item %d not found in the list\n", key); 
+} 
+int main() { 
+head = NULL;   
+insert(10); 
+insert(20); 
+insert(30); 
+search(30);   
+return 0; 
+}
+```
 
 Output:
 
-//paste your output here
+
+![image](https://github.com/user-attachments/assets/bdca3130-61d9-454e-a15d-20da93a1229f)
+
+
 
 
 
@@ -34,11 +82,57 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+#include <stdlib.h> 
+struct Node { 
+int data; 
+struct Node* next; 
+}; 
+struct Node* head = NULL; 
+void insert(int value) { 
+struct Node* newNode = (struct Node*)malloc(sizeof(struct Node)); 
+    newNode->data = value; 
+    newNode->next = NULL; 
+ 
+    if (head == NULL) { 
+        head = newNode; 
+    } else { 
+        struct Node* temp = head; 
+        while (temp->next != NULL) { 
+            temp = temp->next; 
+        } 
+        temp->next = newNode; 
+    } 
+} 
+void display() { 
+    struct Node* temp = head; 
+    if (temp == NULL) { 
+        printf("List is empty.\n"); 
+        return; 
+    } 
+    while (temp != NULL) { 
+        printf("%d\n", temp->data); 
+        temp = temp->next; 
+    } 
+} 
+int main() { 
+    head = NULL; 
+    insert(10); 
+    insert(20); 
+    insert(30); 
+    display(); 
+    return 0; 
+} 
+ 
+
+```
 
 Output:
 
-//paste your output here
+
+![image](https://github.com/user-attachments/assets/97e8a627-98cc-43b1-8f56-d81354c78ad6)
+
 
  
 Result:
@@ -57,12 +151,60 @@ Algorithm:
 4.	Move to the next node by updating the temp pointer to point to the next node (temp = temp->next).
  
 Program:
-
-//type your code here
+```
+#include <stdio.h> 
+#include <stdlib.h> 
+struct Node { 
+    float data; 
+    struct Node* prev; 
+    struct Node* next; 
+}; 
+struct Node* head = NULL; 
+void insert(float value) { 
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node)); 
+    newNode->data = value; 
+    newNode->prev = NULL; 
+    newNode->next = NULL; 
+ 
+    if (head == NULL) { 
+        head = newNode; 
+    } else { 
+        struct Node* temp = head; 
+        while (temp->next != NULL) { 
+            temp = temp->next; 
+        } 
+        temp->next = newNode; 
+        newNode->prev = temp; 
+    } 
+} 
+void display() { 
+    struct Node* temp = head; 
+    if (temp == NULL) { 
+        printf("List is empty.\n"); 
+        return; 
+    } 
+ 
+    while (temp != NULL) { 
+        printf("%.2f ", temp->data); 
+        temp = temp->next; 
+    } 
+    printf("\n"); 
+} 
+ 
+int main() { 
+    head = NULL; 
+    insert(10.5); 
+    insert(20.5); 
+    insert(30.5); 
+    display();  
+    return 0; 
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/b6a7b757-23d6-4f7f-96f1-a0ba49578b50)
+
 
 
 Result:
@@ -83,11 +225,63 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+#include <stdlib.h> 
+struct Node { 
+    int data; 
+    struct Node* prev; 
+    struct Node* next; 
+}; 
+struct Node* head = NULL; 
+void insert(int value) { 
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node)); 
+    newNode->data = value; 
+    newNode->prev = NULL; 
+    newNode->next = NULL; 
+ 
+     
+    if (head == NULL) { 
+        head = newNode; 
+    } else { 
+     
+        struct Node* temp = head; 
+        while (temp->next != NULL) { 
+            temp = temp->next; 
+        } 
+         
+        temp->next = newNode; 
+        newNode->prev = temp; 
+    } 
+} 
+void display() { 
+    struct Node* temp = head; 
+    if (temp == NULL) { 
+        printf("List is empty.\n"); 
+        return; 
+    } 
+ 
+ 
+    while (temp != NULL) { 
+        printf("%d ", temp->data); 
+        temp = temp->next; 
+} 
+printf("\n"); 
+} 
+int main() { 
+head = NULL; 
+insert(10); 
+insert(20); 
+insert(30); 
+display();  
+return 0; 
+} 
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/50298233-b14f-4f63-86fc-57513e783922)
+
 
 
 Result:
@@ -124,12 +318,76 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 
 Program:
-
-//type your code here
-
+```
+#include <stdio.h> 
+#include <stdlib.h> 
+struct Node { 
+    int data; 
+    struct Node* prev; 
+    struct Node* next; 
+}; 
+struct Node* head = NULL; 
+void insert(int value) { 
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node)); 
+    newNode->data = value; 
+    newNode->prev = NULL; 
+    newNode->next = NULL; 
+    if (head == NULL) { 
+        head = newNode; 
+    } else { 
+        struct Node* temp = head; 
+        while (temp->next != NULL) { 
+            temp = temp->next; 
+        } 
+        temp->next = newNode; 
+        newNode->prev = temp; 
+    } 
+} 
+void delete() { 
+    if (head == NULL) { 
+        printf("List is empty. Nothing to delete.\n"); 
+        return; 
+    } 
+ 
+    struct Node* temp = head; 
+    head = head->next;   
+ 
+    if (head != NULL) { 
+        head->prev = NULL;  
+    } 
+    free(temp); 
+    printf("Node deleted\n"); 
+} 
+ 
+ 
+void display() { 
+    struct Node* temp = head; 
+    if (temp == NULL) { 
+        printf("List is empty.\n"); 
+        return; 
+    } 
+    while (temp != NULL) { 
+        printf("%d ", temp->data); 
+        temp = temp->next; 
+    } 
+    printf("\n"); 
+} 
+int main(){ 
+    head = NULL; 
+    insert(10); 
+    insert(20); 
+    insert(30); 
+    display();   
+    delete();    
+    display();   
+ 
+    return 0; 
+}
+```
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/fe9165c2-2c07-4629-84af-f2d81ae28f46)
+
 
 
 

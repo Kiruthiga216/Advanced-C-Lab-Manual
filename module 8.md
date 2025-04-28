@@ -16,15 +16,78 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+```
+#include<stdio.h> 
+#include<math.h>  
+int main() 
+{ 
+int n;  
+scanf("%d",&n); 
+if(n>70) 
+{ 
+switch(n) 
+{ 
+case 71: 
+{ 
+printf("seventy one");  
+break; 
+} 
+case 72: 
+{ 
+printf("seventy two");  
+break; 
+} 
+case 73: 
+{ 
+printf("seventy three");  
+break; 
+} 
+case 74: 
+{ 
+printf("seventy four");  
+break; 
+} 
+case 75: 
+{ 
+printf("seventy five");  
+break; 
+} 
+case 76: 
+{ 
+printf("seventy six");  
+break; 
+} 
+case 77: 
+{ 
+printf("seventy seven");  
+break; 
+} 
+case 78: 
+{ 
+printf("seventy eight");  
+break; 
+} 
+case 79: 
+{ 
+printf("seventy nine");  
+break; 
+} 
+default: 
+{ 
+printf("Greater than 79"); 
+} 
+} 
+} 
+}
+```
 
 
 
 Output:
 
+![image](https://github.com/user-attachments/assets/e8cd8298-a78e-4f6d-8b9e-aa892c745909)
 
-//paste your output here
+
 
 
 
@@ -46,16 +109,36 @@ Algorithm:
 6.	End
  
 Program:
+```
+#include <stdio.h> 
+ 
+int main() { 
+    char str[100]; 
+    int freq[10] = {0}; 
+    printf("enter the string"); 
+    scanf("%s", str); 
+    for (int i = 0; str[i] != '\0'; i++) { 
+        if (str[i] >= '0' && str[i] <= '9') { 
+            freq[str[i] - '0']++; 
+        } 
+    } 
+    for (int i = 0; i < 10; i++) { 
+        printf("%d ", freq[i]); 
+    } 
+ 
+    return 0; 
+} 
+ 
 
-//type your code here
-
+```
 
 
 
 Output:
 
+![image](https://github.com/user-attachments/assets/eb5f64b4-3d32-4dc7-ada9-b3303a9c7586)
 
-//paste your output here
+
 
 
 
@@ -83,16 +166,57 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
-
-//type your code here
+```
+#include <stdio.h> 
+#include <string.h> 
+int main() { 
+    int n; 
+    scanf("%d", &n); 
+    char arr[n][100]; 
+    for (int i = 0; i < n; i++) scanf("%s", arr[i]); 
+    for (int i = 0; i < n-1; i++) { 
+        for (int j = i+1; j < n; j++) { 
+            if (strcmp(arr[i], arr[j]) > 0) { 
+                char temp[100]; 
+                strcpy(temp, arr[i]); 
+                strcpy(arr[i], arr[j]); 
+                strcpy(arr[j], temp); 
+            } 
+        } 
+    } 
+    do { 
+        for (int i = 0; i < n; i++) printf("%s ", arr[i]); 
+        printf("\n"); 
+ 
+        int i = n - 2; 
+        while (i >= 0 && strcmp(arr[i], arr[i + 1]) >= 0) i--; 
+        if (i >= 0) { 
+            int j = n - 1; 
+            while (strcmp(arr[i], arr[j]) >= 0) j--; 
+            char temp[100]; 
+            strcpy(temp, arr[i]); 
+            strcpy(arr[i], arr[j]); 
+            strcpy(arr[j], temp); 
+            for (int l = i + 1, r = n - 1; l < r; l++, r--) { 
+                strcpy(temp, arr[l]); 
+                strcpy(arr[l], arr[r]); 
+                strcpy(arr[r], temp); 
+            } 
+        } 
+        else break; 
+    } while (1); 
+    return 0; 
+} 
+```
 
 
 
 
 Output:
 
+![image](https://github.com/user-attachments/assets/e0611823-00e5-42aa-855a-919b81d80d23)
 
-//paste your output here
+
 
 
 
@@ -116,16 +240,33 @@ Algorithm:
 7.	End
  
 Program:
-
-//type your code here
+```
+#include<stdio.h> 
+int main() 
+{ 
+    int n; 
+    scanf("%d",&n); 
+ int size = 2 * n - 1;  
+    for (int i = 0; i < size; i++) { 
+        for (int j = 0; j < size; j++) { 
+            int value = n - (i< j ? (i < size - j ? i : size - j -1) : (j < size - i ? j : size -i - 1)); 
+            printf("%d ", value); 
+        } 
+        printf("\n"); 
+    } 
+ 
+    return 0; 
+}
+```
 
 
 
 
 Output:
 
+![image](https://github.com/user-attachments/assets/4335bfb1-9b38-483f-bb0c-744c006ccf25)
 
-//paste your output here
+
 
 
 
@@ -155,8 +296,21 @@ o	Call the square() function and display the result.
 5.	End.
 
 Program:
+```
+#include <stdio.h> 
+void square(); 
+int main(){ 
+square(); 
+return 0; 
+} 
+void square(){ 
+int a; 
+scanf("%d",&a); 
+float ans = a*a; 
+printf("The square of %d is : %.2f",a,ans); 
+} 
+```
 
-//type your code here
 
 
 
@@ -164,7 +318,8 @@ Program:
 Output:
 
 
-//paste your output here
+
+![image](https://github.com/user-attachments/assets/b18fa1d2-e89a-4ce5-b95c-6a936bf2e7fe)
 
 
 

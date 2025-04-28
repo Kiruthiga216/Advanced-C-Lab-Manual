@@ -15,13 +15,28 @@ Else
 6.	Return 0
  
 Program:
-
-//type your code here
-
+```
+#include<stdio.h> struct eligib 
+{ 
+int age; char n[4]; 
+}; 
+int main() 
+{ 
+struct eligib e; scanf("%d%s",&e.age,e.n); 
+if(e.age<=6) 
+{ 
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age); 
+} 
+else 
+{ 
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age”): 
+}  
+} 
+```
 
 Output:
+![image](https://github.com/user-attachments/assets/1c7f7b12-5457-4cc1-b012-4ec5e1164344)
 
-//paste your output here
 
 
 Result:
@@ -44,15 +59,35 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include<stdio.h> 
+struct numbers 
+{ 
+int a; 
+int b; 
+}n; 
+int add(struct numbers n); 
+int main() 
+{ 
+printf(“enter the a”); 
+scanf("%d",&n.a); 
+printf(“enter the b”); 
+scanf(“%d”,,&n.b); 
+printf("%d",add(n)); 
+} 
+int add(struct numbers n) 
+{ 
+} 
+return n.a+n.b;
+```
 
 
 
 
 Output:
 
+![image](https://github.com/user-attachments/assets/7c17d23e-3ab6-466f-800c-89e84234b0b9)
 
-//paste your output here
 
 
 
@@ -85,16 +120,45 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h> 
+ 
+int main() { 
+    char fileName[100]; 
+    FILE *file; 
+ 
+     
+    scanf("%s", fileName); 
+ 
+   
+    file = fopen(fileName, "w"); 
+ 
+    
+    if (file == NULL) { 
+        printf("Error creating file.\n"); 
+        return 1;  
+    } 
+ 
+    
+    printf("%s File Created Successfully\n", fileName); 
+    printf("%s File Opened\n", fileName); 
+ 
+     
+    fclose(file); 
+printf("%s File Closed\n", fileName); 
+return 0; 
+}
+```
 
-//type your code here
 
 
 
 
 Output:
 
+![image](https://github.com/user-attachments/assets/85ef5c35-2ebd-4825-be96-9d60f5807a85)
 
-//paste your output here
+
 
 
 
@@ -133,15 +197,56 @@ Use scanf to input the file name into the name array and the number of strings i
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+ 
+int main() { 
+    char fileName[100]; 
+    FILE *file; 
+    int n; 
+    char text[100]; 
+ 
+    
+    scanf("%s", fileName); 
+ 
+   
+    file = fopen(fileName, "w"); 
+ 
+    
+    if (file == NULL) { 
+        printf("Error creating file.\n"); 
+        return 1;   
+    } 
+ 
+    printf("%s Opened\n", fileName); 
+ 
+     
+   
+    scanf("%d", &n); 
+ 
+    
+    for (int i = 0; i < n; i++) { 
+         
+        scanf(" %[^\n]", text);   
+        fprintf(file, "%s\n", text); 
+    } 
+ 
+   
+    fclose(file); 
+ 
+    printf("Data added Successfully\n"); 
+ 
+    return 0; 
+}
+```
 
 
 
 
 Output:
 
+![image](https://github.com/user-attachments/assets/31ed779f-bf9d-4494-9e28-63dc162ce90b)
 
-//paste your output here
 
 
 
@@ -187,7 +292,38 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+#include <stdlib.h> 
+struct Subject 
+{ 
+    char name[20]; 
+    int marks; 
+}; 
+int main() 
+{ 
+    int i,n; 
+    scanf("%d",&n); 
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject)); 
+    if(s==NULL) 
+    { 
+        printf("Memory Alocation Failed\n"); 
+        return 1; 
+    } 
+    for(i=0;i<n;i++) 
+    { 
+        scanf("%s %d",s[i].name,&s[i].marks); 
+    } 
+    for(i=0;i<n;i++) 
+    { 
+        printf("%s  %d\n",s[i].name,s[i].marks); 
+    } 
+     
+    free (s); 
+     
+    return 0; 
+}
+```
 
 
 
@@ -195,7 +331,8 @@ Program:
 Output:
 
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/ac5cdd89-48ce-4d46-9c49-1173ed540a0f)
+
 
 
 

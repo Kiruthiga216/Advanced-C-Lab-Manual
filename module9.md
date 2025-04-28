@@ -13,11 +13,46 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+#define SIZE 100   
+ 
+char stack[SIZE]; 
+int top = -1; 
+void push(char item) { 
+    if (top >= SIZE - 1) { 
+        printf("Stack Overflow\n"); 
+    } else { 
+        top++; 
+        stack[top] = item; 
+    } 
+} 
+void display() { 
+    if (top == -1) { 
+        printf("Stack is empty.\n"); 
+    } else { 
+        for (int i = top; i >= 0; i--) { 
+            printf("%c\n", stack[i]); 
+        } 
+    } 
+} 
+ 
+int main() { 
+ 
+    top = -1; 
+    push('A'); 
+    push('B'); 
+    push('C'); 
+    display(); 
+ 
+    return 0; 
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/6b9e336f-e5d1-4ba2-97b8-d883020585da)
+
 
 
 
@@ -36,11 +71,43 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+#define SIZE 100   
+ 
+float stack[SIZE]; 
+int top = -1;   
+void push(float item) { 
+    if (top >= SIZE - 1) { 
+        printf("Stack Overflow\n"); 
+    } else { 
+        stack[++top] = item; 
+    } 
+} 
+void display() { 
+    if (top == -1) { 
+        printf("stack is empty\n"); 
+    } else { 
+        for (int i = top; i >= 0; i--) { 
+            printf("%.1f ", stack[i]); 
+        } 
+        printf("\n"); 
+} 
+} 
+int main() { 
+top = -1; 
+push(10.5); 
+push(20.5); 
+push(30.5); 
+display(); 
+return 0; 
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/958fff4b-2049-48a9-be0a-2a11136befb7)
+
 
 
 
@@ -62,11 +129,44 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+#define SIZE 100 
+char queue[SIZE]; 
+int front = -1, rear = -1; 
+void enqueue(char item) { 
+    if (rear >= SIZE - 1) { 
+        printf("Queue Overflow\n"); 
+    } else { 
+        if (front == -1) front = 0;  
+        queue[++rear] = item; 
+    } 
+} 
+void display() { 
+    if (front == -1 || front > rear) { 
+        printf("No elements to display\n"); 
+    } else { 
+        for (int i = front; i <= rear; i++) { 
+            printf("%c\n", queue[i]); 
+        } 
+    } 
+} 
+int main() { 
+    rear = -1; 
+    front = -1; 
+    enqueue('A'); 
+    enqueue('B'); 
+    enqueue('C'); 
+    display(); 
+ 
+    return 0; 
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/ad691e52-376c-46de-8c8f-89ab733d0229)
+
 
 
 Result:
@@ -85,12 +185,44 @@ Algorithm:
 4.	Call the enqueue function as needed.
 
 Program:
-
-//type your code here
+```
+#include <stdio.h> 
+#define SIZE 100 
+ 
+char queue[SIZE]; 
+int front = -1, rear = -1; 
+void enqueue(char item) { 
+    if (rear >= SIZE - 1) { 
+        printf("Queue Overflow\n"); 
+    } else { 
+        if (front == -1) front = 0;  
+        queue[++rear] = item; 
+    } 
+} 
+void display() { 
+    if (front == -1 || front > rear) { 
+        printf("No elements to display\n"); 
+    } else { 
+        for (int i = front; i <= rear; i++) { 
+            printf("%c\n", queue[i]); 
+        } 
+    } 
+} 
+int main() { 
+    rear = -1; 
+    front = -1; 
+    enqueue('a'); 
+    enqueue('b'); 
+    enqueue('c'); 
+    display(); 
+ 
+    return 0; 
+} 
+```
 
 Output:
+![image](https://github.com/user-attachments/assets/074464d0-af35-4699-aeee-4640f8100eb5)
 
-//paste your output here
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -121,11 +253,56 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 Program:
 
-//type your code here
+```
+#include <stdio.h> 
+#define SIZE 100 
+char queue[SIZE]; 
+int front = -1, rear = -1; 
+void enqueue(char item) { 
+if (rear >= SIZE - 1) { 
+printf("Queue Overflow\n"); 
+} else { 
+if (front == -1) front = 0; 
+queue[++rear] = item; 
+} 
+} 
+void dequeue() { 
+    if (front == -1 || front > rear) { 
+        printf("Queue Underflow\n"); 
+    } else { 
+        front++; 
+        if (front > rear) { 
+            front = -1; 
+            rear = -1; 
+        } 
+    } 
+} 
+void display() { 
+    if (front == -1 || front > rear) { 
+        printf("No elements to display\n"); 
+    } else { 
+        for (int i = front; i <= rear; i++) { 
+            printf("%c\n", queue[i]); 
+        } 
+    } 
+} 
+int main() { 
+    enqueue('X'); 
+    enqueue('Y'); 
+    enqueue('Z'); 
+    display(); 
+    dequeue(); 
+    display(); 
+ 
+ 
+    return 0; 
+}
+```
 
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/ea174888-8e1d-4f6d-adf3-3379e31e4eab)
+
 
 
 Result:
